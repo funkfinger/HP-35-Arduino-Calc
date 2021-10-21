@@ -49,6 +49,8 @@
 #define F_DECIMAL     35
 #define F_PI          34
 
+#define NUMBER_OF_AUTO_ENTER_COMMANDS 18
+
 class HPCalc {
   public:
     HPCalc();
@@ -78,6 +80,28 @@ class HPCalc {
     boolean isError = false; // True if error
     unsigned char chr_prtd=0;
     byte key; // Holds entered key
+
+    byte autoEnterList[NUMBER_OF_AUTO_ENTER_COMMANDS] = {
+      F_ROLL_DOWN,
+      F_X_SWAP_Y,
+      F_RCL,
+      F_PI,
+      F_PLUS,
+      F_MINUS,
+      F_TIMES,
+      F_DIVIDED,
+      F_SQR_X,
+      F_E_TO_X,
+      F_LN,
+      F_LOG,
+      F_ONE_OVER_X,
+      F_ARC,
+      F_SIN,
+      F_COS,
+      F_TAN,
+      F_EEX
+    };
+
 
     byte do_add(byte x, byte y);
     byte do_sub(byte x, byte y);

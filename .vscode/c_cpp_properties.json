@@ -10,6 +10,7 @@
             "includePath": [
                 "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/include",
                 "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/src",
+                "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/lib/HP-35Calc",
                 "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/.pio/libdeps/adafruit_feather_m0_express/U8g2/src",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/Wire",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/SPI",
@@ -22,7 +23,6 @@
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/Adafruit_TinyUSB_Arduino/src/arduino",
                 "/Users/jayw/.platformio/packages/framework-cmsis/CMSIS/DSP/Include",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/variants/feather_m0_express",
-                "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/lib/hp35Calc",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/CI_Tests",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/HID",
                 "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/I2S/src",
@@ -37,6 +37,7 @@
                 "path": [
                     "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/include",
                     "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/src",
+                    "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/lib/HP-35Calc",
                     "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/.pio/libdeps/adafruit_feather_m0_express/U8g2/src",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/Wire",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/SPI",
@@ -49,7 +50,6 @@
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/Adafruit_TinyUSB_Arduino/src/arduino",
                     "/Users/jayw/.platformio/packages/framework-cmsis/CMSIS/DSP/Include",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/variants/feather_m0_express",
-                    "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/lib/hp35Calc",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/CI_Tests",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/HID",
                     "/Users/jayw/.platformio/packages/framework-arduino-samd-adafruit/libraries/I2S/src",

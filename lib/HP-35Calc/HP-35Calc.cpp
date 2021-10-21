@@ -1,7 +1,7 @@
 #include <Arduino.h>
-#include "hp35Calc.h"
+#include "HP-35Calc.h"
 
-#include "hp35Rom.h"
+#include "HP-35Rom.h"
 
 #define WSIZE 14
 #define ZERO 0
@@ -21,7 +21,11 @@ void HPCalc::enterCommand(int command) {
   for (int j=1;j<1000;j++){ // check on this- why 1000?...
     process_rom(); // Process key with HP35-ROM-Engine
   }
-  // tick();
+  for (int c = 0; c <= NUMBER_OF_AUTO_ENTER_COMMANDS-1; c++) {
+    if(command == autoEnterList[c]) {
+      enterCommand(F_ENTER);
+    }
+  }
 }
 
 void HPCalc::tick() {
