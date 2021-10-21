@@ -7,50 +7,54 @@
 #define ZERO 0
 
 HPCalc::HPCalc() {
-   //implementation
+   enterCommand(F_ENTER); // init
 }
 
 // public...
 
-String HPCalc::getResult() {
-   return HPCalc::resultString; // return the string here...
+String HPCalc::getResultString() {
+   return resultString; // return the string here...
 }
 
-void enterCommand(int command) {
-  // do stuff....
+void HPCalc::enterCommand(int command) {
+  key_code = command;
+  for (int j=1;j<1000;j++){ // check on this- why 1000?...
+    process_rom(); // Process key with HP35-ROM-Engine
+  }
+  // tick();
+}
+
+void HPCalc::tick() {
+  // key_code = 255;
+  // for(int j=1; j<100; j++) {
+  //   process_rom();
+  // }
 }
 
 // private...
 
 void HPCalc::buildResultString() {
-  HPCalc::resultString = "get bent";
+  resultString = "";
   for (int i = WSIZE - 1; i >= 0; i--) {
     if (b [i] >= 8) {
-      // print_lcd(' ');
-      HPCalc::resultString.concat(" ");
+      resultString.concat(" ");
     } else if (i == 2) {
 		  if (a [i] >= 8) {
-	      // print_lcd('-');
-        HPCalc::resultString.concat("-");
+        resultString.concat("-");
       } else {
-        //  print_lcd(' ');
-        HPCalc::resultString.concat(" ");
+        resultString.concat(" ");
       }
 	  } else if (i == 13) {
       if (a [i] >= 8) {
-        // print_lcd('-');
-        HPCalc::resultString.concat("-");
+        resultString.concat("-");
       } else {
-        // print_lcd(' ');
-        HPCalc::resultString.concat(" ");
+        resultString.concat(" ");
 	    }
 	  } else {
-      // print_lcd(a[i]+48); // ascii ?
-      HPCalc::resultString.concat(a[i]+48);
+      resultString.concat(a[i]);
  	  }
 	  if (b [i] == 2) {
-	    // print_lcd('.');
-      HPCalc::resultString.concat(" ");
+      resultString.concat(".");
     }	  
    }
 }
@@ -331,7 +335,24 @@ void HPCalc::process_rom(void) { // Process key with HP35-engine
     update_display = true;
   }
   else if (update_display) {
-   //  lcd_HP35();
+    //  lcd_HP35();
+    buildResultString();
     update_display = false;
   }
 }
+
+
+/*
+// original copyright info...
+
+Copyright (c) 2011 DE LUCA Pietro, Italy 
+$Id:hp35_lcd.pde 11-06-2011 Pietro $
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+    Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+    The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR â€œAS ISâ€ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/

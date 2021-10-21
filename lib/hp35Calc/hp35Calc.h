@@ -3,6 +3,7 @@
 #ifndef __hp35Calc__
 #define __hp35Calc__
 
+// HP-35 info - http://home.citycable.ch/pierrefleur/Jacques-Laporte/HP35%20ROM.htm
 // HP-35 calculator keys...
 
 #define F_X_TO_Y      6
@@ -50,12 +51,12 @@
 
 class HPCalc {
   public:
-    void init();
     HPCalc();
-    String getResult();
+    String getResultString();
     void enterCommand(int command);
-    
+    void tick();
   private:
+    byte key_code = 255;
     void buildResultString();
     String resultString = "";
     byte a[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // A register
@@ -72,7 +73,7 @@ class HPCalc {
     byte first, last; // Register loop boundaries
     byte carry = 0, prevCarry = 0; // Carry bits
     byte fetch_h, fetch_l, op_code = 0; // ROM fetch and operation code
-    byte key_code = 255, key_rom = 0; // Key variables
+    byte key_rom = 0; // Key variables
     boolean display_enable = true, update_display = true; // Display control
     boolean isError = false; // True if error
     unsigned char chr_prtd=0;
@@ -85,9 +86,11 @@ class HPCalc {
 
 #endif
 
-// original copyrite from prior source code...
-
 /*
+// original copyright info...
+
+source modified from https://www.instructables.com/HP-35-Scientific-Calculator-Emulator-With-Arduino-/
+
 Copyright (c) 2011 DE LUCA Pietro, Italy 
 $Id:hp35_lcd.pde 11-06-2011 Pietro $
 
@@ -99,4 +102,3 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR â€œAS ISâ€ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-
