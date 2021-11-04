@@ -31,6 +31,17 @@
             "toolchainBinDir": "/Users/jayw/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "svdPath": "/Users/jayw/.platformio/platforms/atmelsam/misc/svd/ATSAMD21G18A.svd"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/Users/jayw/Documents/Projects/Electronics/hp-mcu-calc/.pio/build/adafruit_feather_m0_express/firmware.elf",
+            "projectEnvName": "adafruit_feather_m0_express",
+            "toolchainBinDir": "/Users/jayw/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "svdPath": "/Users/jayw/.platformio/platforms/atmelsam/misc/svd/ATSAMD21G18A.svd",
+            "loadMode": "manual"
         }
     ]
 }

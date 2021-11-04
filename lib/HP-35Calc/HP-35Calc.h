@@ -54,13 +54,13 @@
 class HPCalc {
   public:
     HPCalc();
-    String getResultString();
+    char * getResultString();
     void enterCommand(int command);
     void tick();
   private:
     byte key_code = 255;
     void buildResultString();
-    String resultString = "";
+    char resultString[20];
     byte a[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // A register
     byte b[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // B register
     byte c[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // C register

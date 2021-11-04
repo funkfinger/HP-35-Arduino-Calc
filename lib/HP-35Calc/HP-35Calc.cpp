@@ -12,7 +12,7 @@ HPCalc::HPCalc() {
 
 // public...
 
-String HPCalc::getResultString() {
+char * HPCalc::getResultString() {
    return resultString; // return the string here...
 }
 
@@ -38,29 +38,33 @@ void HPCalc::tick() {
 // private...
 
 void HPCalc::buildResultString() {
-  resultString = "";
+  char result[20];
+  strcpy(result,"");
   for (int i = WSIZE - 1; i >= 0; i--) {
     if (b [i] >= 8) {
-      resultString.concat(" ");
+      strcat(result," ");
     } else if (i == 2) {
 		  if (a [i] >= 8) {
-        resultString.concat("-");
+        strcat(result,"-");
       } else {
-        resultString.concat(" ");
+        strcat(result," ");
       }
 	  } else if (i == 13) {
       if (a [i] >= 8) {
-        resultString.concat("-");
+        strcat(result,"-");
       } else {
-        resultString.concat(" ");
+        strcat(result," ");
 	    }
 	  } else {
-      resultString.concat(a[i]);
+      char temp[4] = "";
+      sprintf(temp, "%d", a[i]);
+      strcat(result, temp);
  	  }
-	  if (b [i] == 2) {
-      resultString.concat(".");
-    }	  
+	  if (b[i] == 2) {
+      strcat(result,".");
+    }
    }
+   strcpy(resultString, result);
 }
 
 byte HPCalc::do_add(byte x, byte y) { // Add 2 bytes
