@@ -63,7 +63,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=50202",
+                "PLATFORMIO=50203",
                 "ARDUINO_SAMD_ZERO",
                 "ARDUINO_SAMD_FEATHER_M0",
                 "ARDUINO_SAMD_FEATHER_M0_EXPRESS",
