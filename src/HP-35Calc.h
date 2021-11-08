@@ -49,7 +49,7 @@
 #define F_DECIMAL     35
 #define F_PI          34
 
-#define NUMBER_OF_AUTO_ENTER_COMMANDS 18
+#define NUMBER_OF_AUTO_ENTER_COMMANDS 17
 
 class HPCalc {
   public:
@@ -57,6 +57,8 @@ class HPCalc {
     char * getResultString();
     void enterCommand(int command);
     void tick();
+    bool resultChanged;
+
   private:
     byte key_code = 255;
     void buildResultString();
@@ -85,7 +87,7 @@ class HPCalc {
       F_ROLL_DOWN,
       F_X_SWAP_Y,
       F_RCL,
-      F_PI,
+      // F_PI,
       F_PLUS,
       F_MINUS,
       F_TIMES,

@@ -1,0 +1,22 @@
+{
+  "name": "HP-35Calc",
+  "version": "0.0.1",
+  "description": "Arduino library that is an HP-35 emulator",
+  "keywords": "HP, Arduino, HP-35, calculator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/funkfinger/HP-35-Arduino-Calc"
+  },
+  "authors": [
+    {
+      "name": "Jay Wiggins",
+      "email": "jay@irk.com",
+      "url": "https://jaywiggins.com/"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://www.helloworld.org/",
+  "dependencies": {},
+  "frameworks": "*",
+  "platforms": "*"
+}
