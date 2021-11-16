@@ -2,7 +2,7 @@
 
 An Arduino library that is an HP-35 emulator. The bulk of this code comes from an Instructables project where [enurdag](https://www.instructables.com/member/enurdag/) created an Arduino-based HP-35 emulator: https://www.instructables.com/HP-35-Scientific-Calculator-Emulator-With-Arduino-/
 
-If you have an Adafruit MacroPad RP204 and want to see it working, you can check out [this project](https://github.com/funkfinger/adafruit-macropad-hp-35-calc).
+If you have an Adafruit MacroPad RP2040 and want to see it working, you can check out [this project](https://github.com/funkfinger/adafruit-macropad-hp-35-calc).
 
 ## HP 35 calculator links...
 
