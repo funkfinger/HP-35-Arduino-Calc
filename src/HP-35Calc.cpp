@@ -212,10 +212,12 @@ void HPCalc::process_rom(void) { // Process key with HP35-engine
         last = 13;
         break;
       case 6:
-        first = last = 2;
+        first = 2;
+        last = 2;
         break;
       case 7:
-        first = last = 13;
+        first = 13;
+        last = 13;
         break;
     }
     carry = 0;
